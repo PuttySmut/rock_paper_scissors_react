@@ -1,11 +1,16 @@
 import { useState } from 'react'
-import Header from './components/header'
+
 import './App.css'
 import './components/header.css'
+
 import './assets/functions/gameLogic.js'
 import {  gameChoice, gameRound } from './assets/functions/gameLogic'
+
+import PlayerName from './components/PlayerName.jsx'
 import  GameButton  from './components/GameButton.jsx'
+import Header from './components/header'
 import  RoundResult  from './components/RoundResult.jsx'
+
 import  rockPic from './assets/images/rock.png';
 import  paperPic from './assets/images/paper.jpeg';
 import  scissorsPic from './assets/images/scissors.png'
@@ -36,6 +41,7 @@ function App() {
       <img src={paperPic} alt='paper pic' width='200' height='200'></img>
       <img src={scissorsPic} alt='scissors pic' width='200' height='200'></img>
       <Header />
+      <PlayerName/>
       <div className="card">
       
         <GameButton onSelect={() => handleUserSelection('rock')}> ROCK </GameButton>
@@ -43,7 +49,7 @@ function App() {
         <GameButton onSelect={() => handleUserSelection('scissors')}>SCISSORS</GameButton>
         
       </div>
-      {resultDisplay}
+      <div className='resultDisplay'>{resultDisplay}</div>
     </>
   )
 }
